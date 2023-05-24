@@ -1,4 +1,4 @@
-import { Navigation } from '@/src/components/Navigation';
+import { Navigation } from '@/src/components/Navigator/Navigation';
 import styles from './layout.module.scss';
 
 export const metadata = {
