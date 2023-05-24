@@ -2,8 +2,6 @@
 
 # packages
 .app
-.assest
-.src
 
 # dependencies
 /node_modules

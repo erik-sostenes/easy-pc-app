@@ -1,11 +1,11 @@
 import { Category } from "@/src/modules/categories/domain/Category";
 import Link from "next/link";
 
-export function CategoryCard({id, title, imageUrl}: Category){
+export function CategoryCard({id, name}: Category){
     return (
         <li>
             <Link href={`/categories/[id]`} as={`/categories/${id}`}>
-                {title}
+                {name}
             </Link>
         </li>
     )
