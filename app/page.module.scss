@@ -1,7 +1,7 @@
 .main {
   padding: 5em 0 0 0;
 
-  &__productRatingList {
+  &__offersRatingList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(290px,1fr));
     gap: 1rem;

@@ -3,7 +3,7 @@ import styles from "./OfferCard.module.scss";
 
 export function OfferCard({website, id, title, original_price, discount_price, discount_percentage, rating, is_offer_day, is_available, delivery_is_free, image, offer_url, sales}: Offer): JSX.Element {
     return (
-        <section key={id} className={styles.main__productRatingCard}>
+        <section key={id} className={styles.main__offerRatingCard}>
             <div className={styles.main__imageContainer}>
                 <figure>
                     <img src={image} alt={title}/>

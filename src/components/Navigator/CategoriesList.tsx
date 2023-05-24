@@ -3,11 +3,11 @@ import { CategoryCard } from "./CategoryCard";
 import styles from "./CategoriesList.module.scss";
 
 const cache: Category[] = [
-    {id: "8fd01621-9445-43d9-b3a7-dbf445264418", name: "Celulares y Telefonia"},
-    {id: "caf50c68-7a97-4293-9fff-421059bcf6a6", name: "Computación"},
+    {id: "8fd01621-9445-43d9-b3a7-dbf445264418", name: "Electrónica, Audio y Video "},
+    {id: "caf50c68-7a97-4293-9fff-421059bcf6a6", name: "Cámaras y accesorios"},
     {id: "e89dd77a-a711-4fd7-a194-ed15baf77365", name: "Consolas y Videojuegos"},
-    {id: "e9baa27c-23de-4285-8aa0-026e7980ec20", name: "Cámaras y accesorios"},
-    {id: "fa35edfa-4fac-452a-a66e-f31c282f1fb3", name: "Electrónica, Audio y Video"},
+    {id: "e9baa27c-23de-4285-8aa0-026e7980ec20", name: "Computación"},
+    {id: "fa35edfa-4fac-452a-a66e-f31c282f1fb3", name: "Celulares y Telefonia"},
 ];
 
 export default function CategoriesList() {

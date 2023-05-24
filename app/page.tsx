@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <main className={styles.main}>      
       <h1 style={{paddingLeft: "1em"}}>Las ofertas mejor clasificadas</h1>
-      <article className={styles.main__productRatingList}>
+      <article className={styles.main__offersRatingList}>
         {
           store?
           store.map(({website, id, title, original_price, discount_price, discount_percentage, rating, is_offer_day, is_available, delivery_is_free, image, offer_url, category, sales}) => (
