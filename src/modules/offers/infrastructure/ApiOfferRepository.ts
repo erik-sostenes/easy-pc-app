@@ -25,8 +25,8 @@ async function getByRating(rating: Number): Promise<Offer[] | undefined> {
     return products;
 }
 
-async function getByPrice(gte: Number, lte: Number): Promise<Offer[] | undefined>{
-    const products = await fetch(`http://localhost:5000/api/v1/best-offers/?gte=${gte}&lte=${lte}`).then(
+async function getByPrice(gte: Number, lt: Number): Promise<Offer[] | undefined>{
+    const products = await fetch(`http://localhost:5000/api/v1/get-offers-by-price/?greater=${gte}&less=${lt}`).then(
         (response) => response.json() as Promise<Offer[]>
     );
 
