@@ -1,20 +1,32 @@
-import { useOffersGetByRatingRepositories } from "@/src/modules/offers/application/useOffersGetByRatingRepositories";
+"use client"
+
 import styles from "./page.module.scss";
 import { createApiOfferRepository } from "@/src/modules/offers/infrastructure/ApiOfferRepository";
 import { OfferCard } from "@/src/components/OfferCard/OfferCard";
 import { useOffersGetByCategoriesRepositories } from "@/src/modules/offers/application/useOffersGetByCategoriesRepositories";
+import { Form } from "@/src/components/Form/Form";
+import { useEffect, useState } from "react";
+import { Offer } from "@/src/modules/offers/domain/Offer";
 
-export default async function OffersListPage({params}: {params: {id: string}}){
+export default function OffersListPage({params}: {params: {id: string}}){
+    const[offers, setOffers] = useState<Offer[]>();
+
     const {id} = params;
-    const store = await useOffersGetByCategoriesRepositories(createApiOfferRepository(), id)();
+
+    useEffect(() => {
+        useOffersGetByCategoriesRepositories(createApiOfferRepository(), id)()
+                .then(setOffers);
+        
+    }, [id])
 
     return (
         <>
             <main className={styles.main}> 
+                <Form setOffers={setOffers}></Form>
                <article className={styles.main__offersList}>
                 {
-                    store?
-                    store.map(({website, id, title, original_price, discount_price, discount_percentage, rating, is_offer_day, is_available, delivery_is_free, image, offer_url, category, sales}) => (
+                    offers?
+                    offers.map(({website, id, title, original_price, discount_price, discount_percentage, rating, is_offer_day, is_available, delivery_is_free, image, offer_url, category, sales}) => (
                         <OfferCard 
                         website={website}
                         id={id} 
@@ -31,7 +43,7 @@ export default async function OffersListPage({params}: {params: {id: string}}){
                         rating={rating} sales={sales}
                         ></OfferCard>
                     ))
-                    : <h1>No hay productos</h1>
+                    : <h1>No hay ofertas</h1>
                 }
                 </article> 
             </main>
